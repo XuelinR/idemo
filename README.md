@@ -1,5 +1,4 @@
-# idemo
-java相关知识点学习
+# java相关知识点学习
 1、文档结构：
 |——src
 |  |——main
