@@ -1,20 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans" 
 		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xmlns:aop="http://www.springframework.org/schema/aop"
+		xmlns:context="http://www.springframework.org/schema/context"
 		xsi:schemaLocation="http://www.springframework.org/schema/beans  
-                            http://www.springframework.org/schema/beans/spring-beans.xsd">
+                            http://www.springframework.org/schema/beans/spring-beans.xsd
+                            http://www.springframework.org/schema/aop
+                            http://www.springframework.org/schema/aop/spring-aop.xsd
+                            http://www.springframework.org/schema/context
+                            http://www.springframework.org/schema/spring-context.xsd" >
+       <aop:aspectj-autoproxy proxy-target-class="true" />
         <!-- scope:singleton、prototype、 -->                    
-       <bean id="myTestBean" class="spring.MyTestBean" scope="singleton" >
+       <!-- <bean id="myTestBean" class="spring.MyTestBean" scope="singleton" >
        		<constructor-arg index="0">
        			<value>constructor setting one...</value>
        		</constructor-arg>
-       		<!-- <constructor-arg index="1">
+       		<constructor-arg index="1">
        			<value>constructor setting two...</value>
-       		</constructor-arg> -->
-       </bean>
+       		</constructor-arg>
+       </bean> -->
+       <bean id="myTestBean" class="spring.MyTestBean" />
        <bean id="car" class="spring.Car">
        		<replaced-method name="changeMe" replacer="replacer"></replaced-method>
        </bean>
        
 	   <bean id="replacer" class="spring.TestReplacer"></bean>
+	   <bean class="spring.AspectJTest"></bean>
 </beans>
