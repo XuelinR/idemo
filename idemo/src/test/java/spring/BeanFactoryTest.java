@@ -2,6 +2,7 @@ package spring;
 
 import static org.junit.Assert.assertEquals;
 
+import javax.swing.plaf.basic.DefaultMenuLayout;
 
 import org.junit.Test;
 import org.springframework.beans.factory.BeanFactory;
@@ -54,13 +55,5 @@ public class BeanFactoryTest {
 		System.out.println(car);
 		MyTestBean bean = factory.getBean(MyTestBean.class);
 		System.out.println(bean);
-	}
-	
-	@Test
-	public void testAspectj() {
-		DefaultListableBeanFactory factory = new DefaultListableBeanFactory();
-		new XmlBeanDefinitionReader(factory).loadBeanDefinitions("spring-config.xml");
-		MyTestBean bean = factory.getBean(MyTestBean.class);
-		bean.test();
 	}
 }
