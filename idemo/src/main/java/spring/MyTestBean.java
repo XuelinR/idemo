@@ -5,6 +5,9 @@ package spring;
  *
  */
 public class MyTestBean {
+
+	public MyTestBean() {
+	}
 	/**
 	 * @param testStr
 	 */
@@ -23,4 +26,7 @@ public class MyTestBean {
 		this.testStr = testStr;
 	}
 	
+	public void test() {
+		System.out.println("这里处理一些业务逻辑！");
+	}
 }
